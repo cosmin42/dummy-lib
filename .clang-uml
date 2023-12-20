@@ -1,0 +1,17 @@
+compilation_database_dir: .
+output_directory: diagrams
+diagrams:
+  myproject_class:
+    type: include
+    glob:
+      - src/dummy.cpp
+    using_namespace: PB
+    include:
+      namespaces:
+        - DummyNS
+    exclude:
+      namespaces:
+        - std
+    plantuml:
+      after:
+        - 'note left of {{ alias("MyProjectMain") }}: Main class of myproject library.'
